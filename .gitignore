@@ -1,0 +1,18 @@
+# Secrets — MAI pujar a GitHub
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Chainlit
+.chainlit/
+.files/
+
+# Sistema
+.DS_Store
+Thumbs.db

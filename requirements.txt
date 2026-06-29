@@ -1,0 +1,3 @@
+chainlit==2.11.1
+openai==2.42.0
+python-dotenv==1.2.2
