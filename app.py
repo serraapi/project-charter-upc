@@ -1,6 +1,7 @@
 import chainlit as cl
 from openai import AzureOpenAI
 import os
+from typing import Optional
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,6 +18,20 @@ client = AzureOpenAI(
 )
 
 MODEL = "gpt-5-mini"
+
+
+# ────── Autenticació OAuth: només comptes UPC ──────
+@cl.oauth_callback
+def oauth_callback(
+    provider_id: str,
+    token: str,
+    raw_user_data: dict,
+    default_user: cl.User,
+) -> Optional[cl.User]:
+    email = raw_user_data.get("email", "")
+    if email.endswith("@estudiantat.upc.edu") or email.endswith("@upc.edu"):
+        return default_user
+    return None  # Rebutja qualsevol altre compte
 
 
 @cl.on_chat_start
