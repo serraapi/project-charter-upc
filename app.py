@@ -1,4 +1,6 @@
 import chainlit as cl
+from chainlit.types import ThreadDict
+from chainlit.data.sql_alchemy import SQLAlchemyDataLayer
 from openai import AzureOpenAI
 import os
 from typing import Optional
@@ -20,6 +22,12 @@ client = AzureOpenAI(
 MODEL = "gpt-5-mini"
 
 
+# ────── Persistència: Supabase (PostgreSQL) ──────
+@cl.data_layer
+def get_data_layer():
+    return SQLAlchemyDataLayer(conninfo=os.getenv("DATABASE_URL"))
+
+
 # ────── Autenticació OAuth: només comptes UPC ──────
 @cl.oauth_callback
 def oauth_callback(
@@ -39,15 +47,24 @@ async def start():
     cl.user_session.set("historial", [])
 
 
+# ────── Reprendre una conversa guardada ──────
+@cl.on_chat_resume
+async def resume(thread: ThreadDict):
+    historial = []
+    for step in thread["steps"]:
+        if step["type"] == "user_message":
+            historial.append({"role": "user", "content": step["output"]})
+        elif step["type"] == "assistant_message":
+            historial.append({"role": "assistant", "content": step["output"]})
+    cl.user_session.set("historial", historial)
+
+
 @cl.on_message
 async def main(message: cl.Message):
     historial = cl.user_session.get("historial")
     historial.append({"role": "user", "content": message.content})
 
     msg = cl.Message(content="")
-    await msg.send()
-
-    contingut = ""
 
     stream = client.chat.completions.create(
         model=MODEL,
@@ -63,10 +80,9 @@ async def main(message: cl.Message):
             continue
         token = chunk.choices[0].delta.content
         if token:
-            contingut += token
             await msg.stream_token(token)
 
-    await msg.update()
+    # send() al final tanca l'stream i persisteix el missatge al data layer
+    await msg.send()
 
-    historial.append({"role": "assistant", "content": contingut})
-    cl.user_session.set("historial", historial)
+    historial.append({"role": "assistant", "content": msg.content})
