@@ -9,8 +9,10 @@ venv/
 .venv/
 env/
 
-# Chainlit
-.chainlit/
+# Chainlit — ignora tot MENYS config.toml i les traduccions
+.chainlit/*
+!.chainlit/config.toml
+!.chainlit/translations/
 .files/
 
 # Sistema
