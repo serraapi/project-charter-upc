@@ -1,0 +1,260 @@
+{
+    "common": {
+        "actions": {
+            "cancel": "Cancel·lar",
+            "confirm": "Confirmar",
+            "continue": "Continuar",
+            "goBack": "Tornar",
+            "reset": "Restablir",
+            "submit": "Enviar"
+        },
+        "status": {
+            "loading": "Carregant...",
+            "error": {
+                "default": "S'ha produït un error",
+                "serverConnection": "No s'ha pogut connectar amb el servidor"
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Inicia sessió per accedir a l'aplicació",
+            "form": {
+                "email": {
+                    "label": "Correu electrònic",
+                    "required": "el correu electrònic és obligatori",
+                    "placeholder": "jo@exemple.com"
+                },
+                "password": {
+                    "label": "Contrasenya",
+                    "required": "la contrasenya és obligatòria"
+                },
+                "actions": {
+                    "signin": "Inicia sessió"
+                },
+                "alternativeText": {
+                    "or": "O"
+                }
+            },
+            "errors": {
+                "default": "No s'ha pogut iniciar sessió",
+                "signin": "Intenta iniciar sessió amb un altre compte",
+                "oauthSignin": "Intenta iniciar sessió amb un altre compte",
+                "redirectUriMismatch": "L'URI de redirecció no coincideix amb la configuració de l'aplicació OAuth",
+                "oauthCallback": "Intenta iniciar sessió amb un altre compte",
+                "oauthCreateAccount": "Intenta iniciar sessió amb un altre compte",
+                "emailCreateAccount": "Intenta iniciar sessió amb un altre compte",
+                "callback": "Intenta iniciar sessió amb un altre compte",
+                "oauthAccountNotLinked": "Per confirmar la teva identitat, inicia sessió amb el mateix compte que vas utilitzar originalment",
+                "emailSignin": "No s'ha pogut enviar el correu electrònic",
+                "emailVerify": "Si us plau verifica el teu correu, s'ha enviat un nou correu",
+                "credentialsSignin": "Error en iniciar sessió. Verifica que les dades proporcionades siguin correctes",
+                "sessionRequired": "Si us plau inicia sessió per accedir a aquesta pàgina"
+            }
+        },
+        "provider": {
+            "continue": "Continua amb {{provider}}"
+        }
+    },
+    "chat": {
+        "input": {
+            "placeholder": "Escriu el teu missatge aquí...",
+            "actions": {
+                "send": "Enviar missatge",
+                "stop": "Aturar tasca",
+                "attachFiles": "Adjuntar arxius"
+            }
+        },
+        "favorites": {
+            "use": "Usar un missatge preferit",
+            "headline": "Missatges preferits",
+            "remove": "Eliminar preferit",
+            "empty": {
+                "title": "Encara no hi ha prompts desats",
+                "description": "Comença enviant un prompt i marca'l amb una estrella o marca un prompt de xats anteriors"
+            }
+        },
+        "commands": {
+            "button": "Eines",
+            "changeTool": "Canviar eina",
+            "availableTools": "Eines disponibles"
+        },
+        "speech": {
+            "start": "Començar gravació",
+            "stop": "Aturar gravació",
+            "connecting": "Connectant"
+        },
+        "fileUpload": {
+            "dragDrop": "Arrossega i deixa anar arxius aquí",
+            "browse": "Cercar arxius",
+            "sizeLimit": "Límit:",
+            "errors": {
+                "failed": "Error en pujar",
+                "cancelled": "Càrrega cancel·lada de"
+            },
+            "actions": {
+                "cancelUpload": "Cancel·lar pujada",
+                "removeAttachment": "Eliminar adjunt"
+            }
+        },
+        "messages": {
+            "status": {
+                "using": "Usant",
+                "used": "Usat"
+            },
+            "actions": {
+                "copy": {
+                    "button": "Copiar al porta-retalls",
+                    "success": "Copiat!"
+                }
+            },
+            "feedback": {
+                "positive": "Útil",
+                "negative": "No útil",
+                "edit": "Editar comentari",
+                "dialog": {
+                    "title": "Afegir un comentari",
+                    "submit": "Enviar comentari",
+                    "yourFeedback": "El teu comentari..."
+                },
+                "status": {
+                    "updating": "Actualitzant",
+                    "updated": "Comentari actualitzat"
+                }
+            }
+        },
+        "history": {
+            "title": "Darreres entrades",
+            "empty": "Tan buit...",
+            "show": "Mostrar historial"
+        },
+        "settings": {
+            "title": "Panell de configuració",
+            "customize": "Personalitza la configuració del teu xat aquí"
+        },
+        "watermark": "Els LLM poden cometre errors. Verifica la informació important."
+    },
+    "threadHistory": {
+        "sidebar": {
+            "title": "Xats anteriors",
+            "filters": {
+                "search": "Cercar",
+                "placeholder": "Cercar converses..."
+            },
+            "timeframes": {
+                "today": "Avui",
+                "yesterday": "Ahir",
+                "previous7days": "Darrers 7 dies",
+                "previous30days": "Darrers 30 dies"
+            },
+            "empty": "No s'han trobat converses",
+            "actions": {
+                "close": "Tancar barra lateral",
+                "open": "Obrir barra lateral"
+            }
+        },
+        "thread": {
+            "untitled": "Conversa sense títol",
+            "menu": {
+                "rename": "Canviar nom",
+                "share": "Compartir",
+                "delete": "Eliminar"
+            },
+            "actions": {
+                "share": {
+                    "title": "Compartir enllaç del xat",
+                    "button": "Compartir",
+                    "status": {
+                        "copied": "Enllaç copiat",
+                        "created": "Enllaç de compartició creat!",
+                        "unshared": "Compartició desactivada per a aquest fil"
+                    },
+                    "error": {
+                        "create": "Error en crear l'enllaç de compartició",
+                        "unshare": "Error en deixar de compartir el fil"
+                    }
+                },
+                "delete": {
+                    "title": "Confirmar eliminació",
+                    "description": "Això eliminarà la conversa, els seus missatges i elements. Aquesta acció no es pot desfer",
+                    "success": "Xat eliminat",
+                    "inProgress": "Eliminant xat"
+                },
+                "rename": {
+                    "title": "Canviar nom de la conversa",
+                    "description": "Introdueix un nou nom per a aquesta conversa",
+                    "form": {
+                        "name": {
+                            "label": "Nom",
+                            "placeholder": "Introdueix nou nom"
+                        }
+                    },
+                    "success": "Conversa canviada de nom!",
+                    "inProgress": "Canviant nom de la conversa"
+                }
+            }
+        }
+    },
+    "navigation": {
+        "header": {
+            "chat": "Xat",
+            "readme": "Llegeix-me",
+            "theme": {
+                "light": "Tema clar",
+                "dark": "Tema fosc",
+                "system": "Seguir sistema"
+            }
+        },
+        "newChat": {
+            "button": "Nou xat",
+            "dialog": {
+                "title": "Crear nou xat",
+                "description": "Això esborrarà el teu historial de xat actual. Estàs segur que vols continuar?",
+                "tooltip": "Nou xat"
+            }
+        },
+        "user": {
+            "menu": {
+                "settings": "Configuració",
+                "settingsKey": "S",
+                "apiKeys": "Claus API",
+                "logout": "Tancar sessió"
+            }
+        }
+    },
+    "apiKeys": {
+        "title": "Claus API necessàries",
+        "description": "Per usar aquesta aplicació, es requereixen les següents claus API. Les claus s'emmagatzemen a l'emmagatzematge local del teu dispositiu.",
+        "success": {
+            "saved": "Desat correctament"
+        }
+    },
+    "alerts": {
+        "info": "Informació",
+        "note": "Nota",
+        "tip": "Consell",
+        "important": "Important",
+        "warning": "Advertència",
+        "caution": "Precaució",
+        "debug": "Depuració",
+        "example": "Exemple",
+        "success": "Èxit",
+        "help": "Ajuda",
+        "idea": "Idea",
+        "pending": "Pendent",
+        "security": "Seguretat",
+        "beta": "Beta",
+        "best-practice": "Millor pràctica"
+    },
+    "components": {
+        "MultiSelectInput": {
+            "placeholder": "Selecciona..."
+        },
+        "DatePickerInput": {
+            "placeholder": {
+                "single": "Tria una data",
+                "range": "Tria un rang de dates"
+            }
+        }
+    }
+}
